@@ -11,7 +11,7 @@ int cgiMain()
 
 	char name[32] = "\0";
 	char age[16] = "\0";
-	char stuId[32] = "\0";
+	char id[32] = "\0";
 	int status = 0;
 
 	status = cgiFormString("name",  name, 32);
