@@ -10,7 +10,7 @@ int cgiMain()
 
 	char name[32] = "\0";
 	char age[16] = "\0";
-	char stuId[32] = "\0";
+	char id[32] = "\0";
 	char sex[32] = "\0";
 	char sno[16] = "\0";
 	int status = 0;
@@ -29,10 +29,10 @@ int cgiMain()
 		return 1;
 	}
 
-	status = cgiFormString("stuId",  stuId, 32);
+	status = cgiFormString("id",  id, 32);
 	if (status != cgiFormSuccess)
 	{
-		fprintf(cgiOut, "get stuId error!\n");
+		fprintf(cgiOut, "get id error!\n");
 		return 1;
 	}
 	status = cgiFormString("sex",  sex, 32);
@@ -47,7 +47,6 @@ int cgiMain()
 		fprintf(cgiOut, "get sno error!\n");
 		return 1;
 	}
-	fprintf(cgiOut, "name = %s, age = %s, stuId = %s, sex=%s, sno=%s\n", name, age, stuId, sex, sno );
 	//fprintf(cgiOut, "name = %s, age = %s, stuId = %s\n", name, age, stuId);
 
 	int ret;
@@ -73,7 +72,7 @@ int cgiMain()
 
 
 
-	strcpy(sql, "create table stu(id int not null primary key, name varchar(20) not null, age int(10) not null, sex varchar(10) not null, sno int(10) not null foreign key (sno) references school (sno)");
+	strcpy(sql, "create table information(id int not null primary key, name varchar(20) not null, age int not null, sex varchar(10) not null, sno int not null foreign key (sno) references school (sno)");
 	if ((ret = mysql_real_query(db, sql, strlen(sql) + 1)) != 0)
 	{
 		if (ret != 1)
@@ -86,7 +85,7 @@ int cgiMain()
 
 
 
-	sprintf(sql, "insert into stu values(%d, '%s', %d, '%s', %d)", atoi(stuId), name, atoi(age), sex, atoi(sno));
+	sprintf(sql, "insert into information values(%d, '%s', %d, '%s', %d)", atoi(id), name, atoi(age), sex, atoi(sno));
 	if (mysql_real_query(db, sql, strlen(sql) + 1) != 0)
 	{
 		fprintf(cgiOut, "%s\n", mysql_error(db));

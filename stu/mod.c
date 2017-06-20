@@ -28,10 +28,10 @@ int cgiMain()
 		return 1;
 	}
 
-	status = cgiFormString("stuId",  stuId, 32);
+	status = cgiFormString("id",  id, 32);
 	if (status != cgiFormSuccess)
 	{
-		fprintf(cgiOut, "get stuId error!\n");
+		fprintf(cgiOut, "get id error!\n");
 		return 1;
 	}
 
@@ -59,7 +59,7 @@ int cgiMain()
 	}
 
 
-	sprintf(sql, "update stu set name='%s', age= %d where id = %d ", name, atoi(age), atoi(stuId));
+	sprintf(sql, "update information set name='%s', age= %d where id = %d ", name, atoi(age), atoi(id));
 	if ((ret = mysql_real_query(db, sql, strlen(sql) + 1)) != 0)
 	{
 		fprintf(cgiOut,"mysql_real_query fail:%s\n", mysql_error(db));
