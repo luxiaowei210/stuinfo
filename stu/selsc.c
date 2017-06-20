@@ -89,7 +89,7 @@ int cgiMain()
 	mysql_filed = mysql_fetch_fields(res);
 	for (i = 0; i < fields ; i++)
 	{
-		fprintf(cgiOut, "<th>%s</th>", mysql_filed[i].id);
+		fprintf(cgiOut, "<th>%s</th>", mysql_filed[i].name);
 	}
 	fprintf(cgiOut,"</tr>");
 
@@ -113,3 +113,4 @@ int cgiMain()
 
 	mysql_close(db);
 	return 0;
+}

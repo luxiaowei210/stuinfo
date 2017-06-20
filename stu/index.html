@@ -59,6 +59,9 @@
             <div class="text-center col-md-3 col-sm-6">
                 <button>查询专业</button>
             </div>
+            <div class="text-center col-md-3 col-sm-6">
+                <button>添加成绩</button>
+            </div>
         </div>
         <ul class="forms">
             <li class="show">
@@ -166,7 +169,7 @@
                 </form>
             </li>
             <li>
-                <form class="form-horizontal" method="get" action="/cgi-bin/sx/sel.cgi">
+                <form class="form-horizontal" method="get" action="/cgi-bin/sx/selsc.cgi">
                   <div class="form-group">
                       <label for="id" class="col-sm-2 control-label">学生学号</label>
                       <div class="col-sm-10">
@@ -188,6 +191,32 @@
                       </div>
                   </div>
                   <div class="text-center">
+                        <button type="submit" class="btn btn-success">提交</button>
+                        <button type="reset" class="btn btn-success">重置</button>
+                    </div>
+                </form>
+            </li>
+            <li >
+                <form class="form-horizontal" method="get" action="/cgi-bin/sx/addsc.cgi">
+                    <div class="form-group">
+                        <label for="id" class="col-sm-2 control-label">学生学号</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="id" class="form-control" id="id" placeholder="请输入学生学号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="score" class="col-sm-2 control-label">学生成绩</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="score" class="form-control" id="score" placeholder="请输入学生成绩">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="num" class="col-sm-2 control-label">学课程号</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="num" class="form-control" id="num" placeholder="请输入课程号">
+                        </div>
+                    </div>
+                    <div class="text-center">
                         <button type="submit" class="btn btn-success">提交</button>
                         <button type="reset" class="btn btn-success">重置</button>
                     </div>
