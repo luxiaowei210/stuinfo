@@ -52,7 +52,7 @@ int cgiMain()
 	}
 
 
-	fprintf(cgiOut, "delete stu ok!\n");
+	fprintf(cgiOut, "删除成功！!\n");
 	mysql_close(db);
 
 	return 0;

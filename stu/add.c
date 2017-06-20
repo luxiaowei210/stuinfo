@@ -93,7 +93,7 @@ int cgiMain()
 		return -1;
 	}
 
-	fprintf(cgiOut, "add student ok!\n");
+	fprintf(cgiOut, "添加成功!\n");
 	mysql_close(db);
 	return 0;
 }
