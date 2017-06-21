@@ -42,7 +42,13 @@ int cgiMain()
 		return -1;
 	}
 	//
-
+	sprintf(sql, "update information set mn = 0 where id = %d ", atoi(id));
+	if ((ret = mysql_real_query(db, sql, strlen(sql) + 1)) != 0)
+	{
+		fprintf(cgiOut,"mysql_real_query fail:%s\n", mysql_error(db));
+		mysql_close(db);
+		return -1;
+	}
 	fprintf(cgiOut, "删除成功！!\n");
 	mysql_close(db);
 
