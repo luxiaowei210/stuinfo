@@ -40,7 +40,7 @@ int cgiMain()
 	}
 	else
 	{
-		sprintf(sql, "select name,num,score,information.id from score,information where information.id=score.id and id = '%s'", id);
+		sprintf(sql, "select name,num,score,information.id from score,information where information.id=score.id and score.id = '%s'", id);
 	}
 
 
