@@ -36,11 +36,11 @@ int cgiMain()
 
 	if (id[0] == '*')
 	{
-		sprintf(sql, "select * from score");
+		sprintf(sql, "select name,num,score,information.id from score,information where information.id=score.id ");
 	}
 	else
 	{
-		sprintf(sql, "select * from score where id = '%s'", id);
+		sprintf(sql, "select name,num,score,information.id from score,information where information.id=score.id and id = '%s'", id);
 	}
 
 

@@ -59,6 +59,9 @@
             <div class="text-center col-md-3 col-sm-6">
                 <button>添加成绩</button>
             </div>
+            <div class="text-center col-md-3 col-sm-6">
+                <button>删除成绩</button>
+            </div>
         </div>
         <ul class="forms">
             <li class="show">
@@ -84,13 +87,19 @@
                     <div class="form-group">
                         <label for="sex" class="col-sm-2 control-label">学生性别</label>
                         <div class="col-sm-10">
-                            <input type="text" name="sex" class="form-control" id="sex" placeholder="请输入学生性别">
+                            <input type="radio" name="sex"  id="sex" value="男 "margin-left:90px>男
+                            <input type="radio" name="sex"  id="sex" value="女" margin-left:90px>女
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="sno" class="col-sm-2 control-label">学生专业号</label>
+                        <label for="sno" class="col-sm-2 control-label">学生专业</label>
                         <div class="col-sm-10">
-                            <input type="text" name="sno" class="form-control" id="sno" placeholder="请输入学生专业号">
+                            <select name="sno">
+                            <option value="41">软件</option>
+                            <option value="42">网络</option>
+                            <option value="43">电子</option>
+                            <option value="44">艺设</option>
+                          </select>
                         </div>
                     </div>
                     <div class="text-center">
@@ -136,13 +145,19 @@
                     <div class="form-group">
                         <label for="sex" class="col-sm-2 control-label">学生性别</label>
                         <div class="col-sm-10">
-                            <input type="text" name="sex" class="form-control" id="sex" placeholder="请输入学生性别">
+                              <input type="radio" name="sex"  id="sex" value="男 "margin-left:90px>男
+                              <input type="radio" name="sex"  id="sex" value="女" margin-left:90px>女
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="sno" class="col-sm-2 control-label">学生专业号</label>
                         <div class="col-sm-10">
-                            <input type="text" name="sno" class="form-control" id="sno" placeholder="请输入学生专业号">
+                          <select name="sno">
+                           <option value="41">软件</option>
+                           <option value="42">网络</option>
+                           <option value="43">电子</option>
+                           <option value="44">艺设</option>
+                          </select>
                         </div>
                     </div>
                     <div class="text-center">
@@ -196,7 +211,12 @@
                     <div class="form-group">
                         <label for="num" class="col-sm-2 control-label">学课程号</label>
                         <div class="col-sm-10">
-                            <input type="text" name="num" class="form-control" id="num" placeholder="请输入课程号">
+                          <select name="num">
+                          <option value="01">高数</option>
+                          <option value="02">软件工程</option>
+                          <option value="03">计算机网络</option>
+                          <option value="04">现代</option>
+                        </select>
                         </div>
                     </div>
                     <div class="text-center">
@@ -205,6 +225,31 @@
                     </div>
                 </form>
             </li>
+            <li>
+            <form class="form-horizontal" method="get" action="/cgi-bin/sx/delsc.cgi">
+                <div class="form-group">
+                    <label for="id" class="col-sm-2 control-label">学生学号</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="id" class="form-control" id="id" placeholder="请输入学生学号">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="num" class="col-sm-2 control-label">学课程号</label>
+                    <div class="col-sm-10">
+                      <select name="num">
+                      <option value="01">高数</option>
+                      <option value="02">软件工程</option>
+                      <option value="03">计算机网络</option>
+                      <option value="04">现代</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success">提交</button>
+                    <button type="reset" class="btn btn-success">重置</button>
+                </div>
+            </form>
+          </li>
         </ul>
     </div>
     <script src="./public/js/jquery-3.0.0.min.js"></script>
