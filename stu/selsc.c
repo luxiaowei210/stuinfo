@@ -29,18 +29,17 @@ int cgiMain()
 		fprintf(cgiOut, "get id error!\n");
 		return 1;
 	}
-
 	int ret;
 	MYSQL *db;
 	char sql[128] = "\0";
 
 	if (id[0] == '*')
 	{
-		sprintf(sql, "select name,num,score,information.id from score,information where information.id=score.id ");
+		sprintf(sql, "select name,num,score,information.id from score,information where information.id=score.id");
 	}
 	else
 	{
-		sprintf(sql, "select name,num,score,information.id from score,information where information.id=score.id and score.id = '%s'", id);
+		sprintf(sql, "select name,num,score,information.id from score,information where information.id=score.id and score.id = '%s'", id );
 	}
 
 

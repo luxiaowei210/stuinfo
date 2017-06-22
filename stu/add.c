@@ -47,7 +47,7 @@ int cgiMain()
 		fprintf(cgiOut, "get sno error!\n");
 		return 1;
 	}
-	//fprintf(cgiOut, "name = %s, age = %s, stuId = %s\n", name, age, stuId);
+	fprintf(cgiOut, "name = %s, age = %s, id = %s, sex=%s, sno=%s\n", name, age, id, sex, sno);
 
 	int ret;
 	char sql[128] = "\0";
